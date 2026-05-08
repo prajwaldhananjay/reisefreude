@@ -17,8 +17,8 @@ export const itineraryData = [
     date: "10th July",
     day: "Friday",
     city: "Munich",
-    activities: "Garmisch/Zugspitze/Eibsee",
-    notes: ""
+    activities: "Garmisch-Zugspitze-Eibsee",
+    notes: "Carry water and snacks"
   },
   {
     date: "11th July",
@@ -87,7 +87,7 @@ export const itineraryData = [
     date: "20th July",
     day: "Monday",
     city: "Munich",
-    activities: "",
+    activities: "Innsbruck, Austria",
     notes: ""
   },
   {
@@ -115,43 +115,43 @@ export const itineraryData = [
     date: "24th July",
     day: "Friday",
     city: "Leverkusen",
-    activities: "Return to Munich",
-    notes: "Visit Cologne Cathedral and Old Town"
+    activities: "Visit Cologne Cathedral and Old Town",
+    notes: ""
   },
   {
     date: "25th July",
     day: "Saturday",
     city: "Leverkusen",
-    activities: "To be decided by Prathi",
-    notes: "To be planned"
+    activities: "To be decided",
+    notes: ""
   },
   {
     date: "26th July",
     day: "Sunday",
     city: "Leverkusen",
-    activities: "To be decided by Prathi",
+    activities: "To be decided",
     notes: ""
   },
   {
     date: "27th July",
     day: "Monday",
-    city: "Munich",
-    activities: "To be decided by Prathi",
+    city: "Leverkusen",
+    activities: "To be decided",
     notes: ""
   },
   {
     date: "28th July",
     day: "Tuesday",
     city: "Leverkusen",
-    activities: "To be decided by Prathi",
+    activities: "To be decided",
     notes: ""
   },
   {
     date: "29th July",
     day: "Wednesday",
-    city: "Munich",
-    activities: "Return to Munich",
-    notes: "Rest day"
+    city: "Leverkusen",
+    activities: "Return to Munich and rest",
+    notes: "Book Cologne-Munich train"
   },
   {
     date: "30th July",
