@@ -190,4 +190,6 @@ export const itineraryData = [
   }
 ];
 
-export const tripStartDate = new Date(2025, 6, 8); // July 8, 2025
+// July 8, 2026 at 7:00 AM Berlin time (CEST - UTC+2)
+// Create date in Berlin timezone
+export const tripStartDate = new Date('2026-07-08T07:00:00+02:00');

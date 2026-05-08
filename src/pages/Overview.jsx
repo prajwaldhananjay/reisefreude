@@ -48,7 +48,7 @@ export default function Overview() {
       {/* Header */}
       <div className="sticky top-0 z-10 bg-navy/80 backdrop-blur-md border-b border-white/10 px-4 py-4">
         <h1 className="text-3xl font-display font-bold">My Europe Trip</h1>
-        <p className="text-sm text-blue-200 mt-1">July 8 - August 3, 2025</p>
+        <p className="text-sm text-blue-200 mt-1">July 8 - August 3, 2026</p>
       </div>
 
       {/* Main Content */}
