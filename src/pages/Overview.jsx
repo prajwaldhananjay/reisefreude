@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { itineraryData, tripStartDate } from '../data/itinerary';
+import CalendarView from './CalendarView';
 
 export default function Overview() {
   const navigate = useNavigate();
+  const [view, setView] = useState('list');
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -62,7 +64,7 @@ export default function Overview() {
         </div>
       </section>
 
-      <main className="max-w-2xl mx-auto">
+      <main className={`${view === 'calendar' ? 'max-w-6xl' : 'max-w-2xl'} mx-auto transition-all`}>
         {/* Hero Section / Trip Summary */}
         <section className="px-margin-mobile py-xl">
           <div className="rounded-xl overflow-hidden bg-surface-container-low border-l-4 border-secondary p-lg shadow-soft">
@@ -107,44 +109,71 @@ export default function Overview() {
           </section>
         )}
 
-        {/* Itinerary List */}
+        {/* Itinerary Section with View Toggle */}
         <section className="px-margin-mobile mb-xl">
-          <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-lg px-sm">Your Itinerary</p>
-          <div className="space-y-lg relative">
-            {/* Timeline Vertical Line */}
-            <div className="absolute left-5 top-2 bottom-2 w-[2px] bg-secondary-fixed-dim"></div>
-
-            {itineraryData.map((day, index) => (
-              <div
-                key={index}
-                className="relative flex gap-lg items-start pl-10 group"
+          <div className="flex items-center justify-between mb-lg px-sm gap-md flex-wrap">
+            <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Your Itinerary</p>
+            <div className="inline-flex rounded-full bg-surface-container border border-outline-variant p-1">
+              <button
+                onClick={() => setView('list')}
+                className={`px-md py-xs rounded-full font-label-caps text-label-caps uppercase tracking-wider transition-colors flex items-center gap-xs ${
+                  view === 'list' ? 'bg-secondary text-on-secondary' : 'text-on-surface-variant hover:text-primary'
+                }`}
               >
-                {/* Timeline dot */}
-                <div className="absolute left-2.5 top-2 w-3 h-3 rounded-full bg-secondary ring-4 ring-white z-10 group-hover:scale-125 transition-transform"></div>
-
-                {/* Card Content */}
-                <button
-                  onClick={() => navigate(`/day/${index}`)}
-                  className="w-full bg-surface-container-lowest p-md rounded-xl shadow-soft hover:shadow-lg transition-all border-l-4 border-secondary flex flex-col text-left active:scale-95"
-                >
-                  <div className="flex justify-between items-start gap-md flex-1">
-                    <div className="flex-1 flex flex-col">
-                      <p className="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-xs">{day.day}, {day.date}</p>
-                      <h3 className="font-headline-md text-headline-md text-primary mb-sm">{day.city}</h3>
-                      <p className="font-body-md text-body-md text-on-surface-variant line-clamp-2 flex-1">{day.activities}</p>
-                      {day.notes && (
-                        <div className="mt-sm inline-flex items-center gap-xs bg-secondary-container/30 px-sm py-xs rounded-full">
-                          <span className="material-symbols-outlined text-sm text-on-secondary-container">info</span>
-                          <span className="font-label-caps text-label-caps text-on-secondary-container">{day.notes}</span>
-                        </div>
-                      )}
-                    </div>
-                    <span className="material-symbols-outlined text-secondary/60 flex-shrink-0">chevron_right</span>
-                  </div>
-                </button>
-              </div>
-            ))}
+                <span className="material-symbols-outlined text-sm">view_list</span>
+                List
+              </button>
+              <button
+                onClick={() => setView('calendar')}
+                className={`px-md py-xs rounded-full font-label-caps text-label-caps uppercase tracking-wider transition-colors flex items-center gap-xs ${
+                  view === 'calendar' ? 'bg-secondary text-on-secondary' : 'text-on-surface-variant hover:text-primary'
+                }`}
+              >
+                <span className="material-symbols-outlined text-sm">calendar_month</span>
+                Calendar
+              </button>
+            </div>
           </div>
+
+          {view === 'list' ? (
+            <div className="space-y-lg relative">
+              {/* Timeline Vertical Line */}
+              <div className="absolute left-5 top-2 bottom-2 w-[2px] bg-secondary-fixed-dim"></div>
+
+              {itineraryData.map((day, index) => (
+                <div
+                  key={index}
+                  className="relative flex gap-lg items-start pl-10 group"
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-2.5 top-2 w-3 h-3 rounded-full bg-secondary ring-4 ring-white z-10 group-hover:scale-125 transition-transform"></div>
+
+                  {/* Card Content */}
+                  <button
+                    onClick={() => navigate(`/day/${index}`)}
+                    className="w-full bg-surface-container-lowest p-md rounded-xl shadow-soft hover:shadow-lg transition-all border-l-4 border-secondary flex flex-col text-left active:scale-95"
+                  >
+                    <div className="flex justify-between items-start gap-md flex-1">
+                      <div className="flex-1 flex flex-col">
+                        <p className="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-xs">{day.day}, {day.date}</p>
+                        <h3 className="font-headline-md text-headline-md text-primary mb-sm">{day.city}</h3>
+                        <p className="font-body-md text-body-md text-on-surface-variant line-clamp-2 flex-1">{day.activities}</p>
+                        {day.notes && (
+                          <div className="mt-sm inline-flex items-center gap-xs bg-secondary-container/30 px-sm py-xs rounded-full">
+                            <span className="material-symbols-outlined text-sm text-on-secondary-container">info</span>
+                            <span className="font-label-caps text-label-caps text-on-secondary-container">{day.notes}</span>
+                          </div>
+                        )}
+                      </div>
+                      <span className="material-symbols-outlined text-secondary/60 flex-shrink-0">chevron_right</span>
+                    </div>
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <CalendarView />
+          )}
         </section>
       </main>
     </div>
