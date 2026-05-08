@@ -55,7 +55,7 @@ export default function Overview() {
 
       {/* Hero Section with Background Image */}
       <section className="relative h-64 bg-gradient-to-br from-primary via-slate-900 to-primary flex items-end overflow-hidden" style={{
-        backgroundImage: "linear-gradient(135deg, rgba(0, 13, 34, 0.6) 0%, rgba(0, 13, 34, 0.8) 100%), url('https://images.unsplash.com/photo-1578500494198-246f612d03b3?q=80&w=2000&auto=format&fit=crop')",
+        backgroundImage: "linear-gradient(135deg, rgba(0, 13, 34, 0.6) 0%, rgba(0, 13, 34, 0.8) 100%), url('/images/europe.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
