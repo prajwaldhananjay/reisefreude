@@ -46,11 +46,8 @@ export default function Overview() {
   return (
     <div className="bg-background text-on-surface min-h-screen">
       {/* TopAppBar */}
-      <header className="sticky top-0 z-50 w-full bg-surface-bright shadow-soft flex items-center justify-between px-gutter py-md">
+      <header className="sticky top-0 z-50 w-full bg-surface-bright shadow-soft flex items-center px-gutter py-md">
         <h1 className="font-display-lg text-display-lg text-primary">My Europe Trip</h1>
-        <button className="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/50 transition-colors p-sm rounded-full active:scale-95">
-          more_vert
-        </button>
       </header>
 
       {/* Hero Section with Background Image */}
