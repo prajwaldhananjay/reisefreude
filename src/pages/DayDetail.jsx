@@ -99,31 +99,6 @@ export default function DayDetail() {
           )}
         </div>
       </div>
-
-      {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-navy/95 backdrop-blur-lg border-t border-white/10 px-4 py-3">
-        <div className="flex justify-around items-center max-w-2xl mx-auto">
-          <button
-            onClick={() => navigate('/')}
-            className="flex flex-col items-center gap-1 py-2 px-4 rounded-lg bg-white/10 text-white text-xs font-semibold"
-          >
-            <span className="text-lg">📋</span>
-            Itinerary
-          </button>
-          <button className="flex flex-col items-center gap-1 py-2 px-4 rounded-lg text-blue-300 text-xs font-semibold hover:bg-white/5">
-            <span className="text-lg">🗺️</span>
-            Map
-          </button>
-          <button className="flex flex-col items-center gap-1 py-2 px-4 rounded-lg text-blue-300 text-xs font-semibold hover:bg-white/5">
-            <span className="text-lg">📄</span>
-            Documents
-          </button>
-          <button className="flex flex-col items-center gap-1 py-2 px-4 rounded-lg text-blue-300 text-xs font-semibold hover:bg-white/5">
-            <span className="text-lg">👤</span>
-            Profile
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
