@@ -86,72 +86,72 @@ export const itineraryData = [
   {
     date: "20th July",
     day: "Monday",
-    city: "Leverkusen",
-    activities: "Arrive in Leverkusen",
-    notes: "Book Munich-Cologne train"
+    city: "Munich",
+    activities: "",
+    notes: ""
   },
   {
     date: "21st July",
     day: "Tuesday",
-    city: "Leverkusen",
-    activities: "Visit Cologne Cathedral and Old Town",
+    city: "Munich",
+    activities: "",
     notes: ""
   },
   {
     date: "22nd July",
     day: "Wednesday",
-    city: "Leverkusen",
-    activities: "Visit Amsterdam or Brussels",
-    notes: "Plan Amsterdam/Brussels day trip"
+    city: "Munich",
+    activities: "",
+    notes: ""
   },
   {
     date: "23rd July",
     day: "Thursday",
-    city: "Amsterdam/Brussels",
-    activities: "To be decided",
-    notes: "Plan this"
+    city: "Leverkusen",
+    activities: "Arrive in Leverkusen",
+    notes: "Book Munich-Cologne train"
   },
   {
     date: "24th July",
     day: "Friday",
-    city: "Munich",
+    city: "Leverkusen",
     activities: "Return to Munich",
-    notes: "Book Cologne - Munich train"
+    notes: "Visit Cologne Cathedral and Old Town"
   },
   {
     date: "25th July",
     day: "Saturday",
-    city: "Vienna/Budapest",
-    activities: "Explore Vienna or Budapest",
-    notes: "Book train & stay"
+    city: "Leverkusen",
+    activities: "To be decided by Prathi",
+    notes: "To be planned"
   },
   {
     date: "26th July",
     day: "Sunday",
-    city: "Vienna/Budapest",
-    activities: "Continue exploration",
+    city: "Leverkusen",
+    activities: "To be decided by Prathi",
     notes: ""
   },
   {
     date: "27th July",
     day: "Monday",
     city: "Munich",
-    activities: "Return to Munich",
+    activities: "To be decided by Prathi",
     notes: ""
   },
   {
     date: "28th July",
     day: "Tuesday",
-    city: "Munich",
-    activities: "Relax and enjoy Munich",
+    city: "Leverkusen",
+    activities: "To be decided by Prathi",
     notes: ""
   },
   {
     date: "29th July",
     day: "Wednesday",
     city: "Munich",
-    activities: "Chillax",
-    notes: ""
+    activities: "Return to Munich",
+    notes: "Rest day"
   },
   {
     date: "30th July",
@@ -163,14 +163,14 @@ export const itineraryData = [
   {
     date: "31st July",
     day: "Friday",
-    city: "Munich",
-    activities: "Last Friday in Europe",
-    notes: ""
+    city: "Vienna/Budapest",
+    activities: "Explore Vienna or Budapest",
+    notes: "Book train & stay"
   },
   {
     date: "1st August",
     day: "Saturday",
-    city: "Munich",
+    city: "Vienna/Budapest",
     activities: "Last Saturday in Europe",
     notes: "Remember to buy bus/tram/train tickets if traveling"
   },
@@ -178,7 +178,7 @@ export const itineraryData = [
     date: "2nd August",
     day: "Sunday",
     city: "Munich",
-    activities: "Last Sunday in Europe, pack and prepare for return flight",
+    activities: "Return to Munich, pack and prepare for return flight",
     notes: ""
   },
   {
