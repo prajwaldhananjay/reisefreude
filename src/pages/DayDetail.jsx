@@ -25,7 +25,7 @@ export default function DayDetail() {
   }
 
   return (
-    <div className="bg-background text-on-surface min-h-screen">
+    <div className="bg-background text-on-surface min-h-screen pb-xl">
       {/* TopAppBar */}
       <header className="sticky top-0 z-50 w-full bg-surface-bright shadow-soft flex items-center justify-between px-gutter py-md">
         <button
