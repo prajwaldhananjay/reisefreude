@@ -86,49 +86,49 @@ export const itineraryData = [
   {
     date: "20th July",
     day: "Monday",
-    city: "Berlin",
-    activities: "Arrive in Berlin",
-    notes: "Book stay, Book Munich-Berlin train"
+    city: "Leverkusen",
+    activities: "Arrive in Leverkusen",
+    notes: "Book Munich-Cologne train"
   },
   {
     date: "21st July",
     day: "Tuesday",
-    city: "Berlin",
-    activities: "Visit Museum, Berlin Wall etc",
+    city: "Leverkusen",
+    activities: "Visit Cologne Cathedral and Old Town",
     notes: ""
   },
   {
     date: "22nd July",
     day: "Wednesday",
     city: "Leverkusen",
-    activities: "Parliament etc",
-    notes: "Book Berlin - Leverkusen train"
+    activities: "Visit Amsterdam or Brussels",
+    notes: "Plan Amsterdam/Brussels day trip"
   },
   {
     date: "23rd July",
     day: "Thursday",
-    city: "Leverkusen",
-    activities: "Explore Leverkusen",
-    notes: ""
+    city: "Amsterdam/Brussels",
+    activities: "To be decided",
+    notes: "Plan this"
   },
   {
     date: "24th July",
     day: "Friday",
     city: "Munich",
     activities: "Return to Munich",
-    notes: "Book Leverkusen - Munich train, Book stay in Munich"
+    notes: "Book Cologne - Munich train"
   },
   {
     date: "25th July",
     day: "Saturday",
-    city: "Switzerland/Austria",
-    activities: "Explore Switzerland or Austria",
-    notes: "Book train"
+    city: "Vienna/Budapest",
+    activities: "Explore Vienna or Budapest",
+    notes: "Book train & stay"
   },
   {
     date: "26th July",
     day: "Sunday",
-    city: "Switzerland/Austria",
+    city: "Vienna/Budapest",
     activities: "Continue exploration",
     notes: ""
   },
@@ -150,35 +150,35 @@ export const itineraryData = [
     date: "29th July",
     day: "Wednesday",
     city: "Munich",
-    activities: "Last-minute explorations",
+    activities: "Chillax",
     notes: ""
   },
   {
     date: "30th July",
     day: "Thursday",
     city: "Munich",
-    activities: "Final day activities",
+    activities: "Visit Nuremburg?",
     notes: ""
   },
   {
     date: "31st July",
     day: "Friday",
     city: "Munich",
-    activities: "Prepare for departure",
+    activities: "Last Friday in Europe",
     notes: ""
   },
   {
     date: "1st August",
     day: "Saturday",
     city: "Munich",
-    activities: "Last day in Munich",
-    notes: ""
+    activities: "Last Saturday in Europe",
+    notes: "Remember to buy bus/tram/train tickets if traveling"
   },
   {
     date: "2nd August",
     day: "Sunday",
     city: "Munich",
-    activities: "Final evening in Munich",
+    activities: "Last Sunday in Europe, pack and prepare for return flight",
     notes: ""
   },
   {
