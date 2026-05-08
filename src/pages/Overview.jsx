@@ -44,78 +44,112 @@ export default function Overview() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy via-blue-900 to-navy text-white font-sans">
-      {/* Header */}
-      <div className="sticky top-0 z-10 bg-navy/80 backdrop-blur-md border-b border-white/10 px-4 py-4">
-        <h1 className="text-3xl font-display font-bold">My Europe Trip</h1>
-        <p className="text-sm text-blue-200 mt-1">July 8 - August 3, 2026</p>
-      </div>
+    <div className="bg-background text-on-surface min-h-screen">
+      {/* TopAppBar */}
+      <header className="sticky top-0 z-50 w-full bg-surface-bright shadow-soft flex items-center justify-between px-gutter py-md">
+        <h1 className="font-display-lg text-display-lg text-primary">My Europe Trip</h1>
+        <button className="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/50 transition-colors p-sm rounded-full active:scale-95">
+          more_vert
+        </button>
+      </header>
 
-      {/* Main Content */}
-      <div className="px-4 py-6 pb-24">
-        {/* Live Trip Status Card */}
-        <div className="mb-8 rounded-xl backdrop-blur-lg bg-white/10 border border-white/20 p-6 shadow-2xl">
-          <div className="mb-4">
-            <h2 className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-2">Today</h2>
-            <p className="text-lg text-white/90">{dateStr}</p>
-          </div>
-
-          <div className="border-t border-white/10 pt-4 mt-4">
-            <h3 className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-4">Trip Starts In</h3>
-            {countdown.started ? (
-              <div className="text-center py-6">
-                <p className="text-2xl font-display font-bold">🎉 Trip has started!</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-4 gap-3">
-                <div className="bg-white/10 rounded-lg p-3 text-center">
-                  <div className="text-2xl font-bold font-display">{countdown.days}</div>
-                  <div className="text-xs text-blue-200 mt-1">Days</div>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 text-center">
-                  <div className="text-2xl font-bold font-display">{countdown.hours}</div>
-                  <div className="text-xs text-blue-200 mt-1">Hours</div>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 text-center">
-                  <div className="text-2xl font-bold font-display">{countdown.minutes}</div>
-                  <div className="text-xs text-blue-200 mt-1">Min</div>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 text-center">
-                  <div className="text-2xl font-bold font-display">{countdown.seconds}</div>
-                  <div className="text-xs text-blue-200 mt-1">Sec</div>
-                </div>
-              </div>
-            )}
-          </div>
+      {/* Hero Section with Background Image */}
+      <section className="relative h-64 bg-gradient-to-br from-primary via-slate-900 to-primary flex items-end overflow-hidden" style={{
+        backgroundImage: "linear-gradient(135deg, rgba(0, 13, 34, 0.6) 0%, rgba(0, 13, 34, 0.8) 100%), url('https://images.unsplash.com/photo-1578500494198-246f612d03b3?q=80&w=2000&auto=format&fit=crop')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
+        <div className="w-full px-gutter py-lg relative z-10">
+          <h2 className="font-display-lg text-display-lg text-white mb-sm">Reisefreude</h2>
+          <p className="font-body-md text-body-md text-white/90">The joy of traveling</p>
         </div>
+      </section>
 
-        {/* Itinerary Cards */}
-        <div className="space-y-3">
-          <h2 className="text-sm font-semibold text-blue-200 uppercase tracking-wider px-1 mb-4">Your Itinerary</h2>
-          {itineraryData.map((day, index) => (
-            <button
-              key={index}
-              onClick={() => navigate(`/day/${index}`)}
-              className="w-full text-left rounded-xl backdrop-blur-lg bg-white/10 hover:bg-white/15 border border-white/20 p-4 transition-all duration-300 hover:border-white/40 hover:shadow-lg"
-            >
-              <div className="flex justify-between items-start">
-                <div className="flex-1">
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-sm font-semibold text-blue-300">{day.day}</span>
-                    <span className="text-lg font-display font-bold text-white">{day.date}</span>
+      <main className="max-w-2xl mx-auto">
+        {/* Hero Section / Trip Summary */}
+        <section className="px-margin-mobile py-xl">
+          <div className="rounded-xl overflow-hidden bg-surface-container-low border-l-4 border-secondary p-lg shadow-soft">
+            <div className="flex justify-between items-start mb-md">
+              <div>
+                <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-xs">Today</p>
+                <p className="font-title-sm text-title-sm text-primary">{dateStr}</p>
+              </div>
+              <div className="bg-secondary-fixed/30 px-md py-sm rounded-full border border-secondary/40">
+                <p className="font-label-caps text-label-caps text-secondary flex items-center gap-sm">
+                  <span className="material-symbols-outlined text-sm">schedule</span>
+                  {countdown.started ? '✨ Journey started' : `${countdown.days} days to go`}
+                </p>
+              </div>
+            </div>
+            <p className="font-body-md text-body-md text-on-surface-variant uppercase tracking-wider">July 8 - August 3, 2026</p>
+          </div>
+        </section>
+
+        {/* Countdown Section */}
+        {!countdown.started && (
+          <section className="px-margin-mobile mb-xl">
+            <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-lg px-sm">Trip Starts In</p>
+            <div className="grid grid-cols-4 gap-md">
+              <div className="rounded-lg bg-secondary-fixed/20 border border-secondary/40 p-md text-center hover:border-secondary/60 transition-colors">
+                <p className="font-display-lg text-display-lg text-secondary">{countdown.days}</p>
+                <p className="font-label-caps text-label-caps text-secondary/70 uppercase tracking-wider mt-sm">Days</p>
+              </div>
+              <div className="rounded-lg bg-secondary-fixed/20 border border-secondary/40 p-md text-center hover:border-secondary/60 transition-colors">
+                <p className="font-display-lg text-display-lg text-secondary">{countdown.hours}</p>
+                <p className="font-label-caps text-label-caps text-secondary/70 uppercase tracking-wider mt-sm">Hours</p>
+              </div>
+              <div className="rounded-lg bg-secondary-fixed/20 border border-secondary/40 p-md text-center hover:border-secondary/60 transition-colors">
+                <p className="font-display-lg text-display-lg text-secondary">{countdown.minutes}</p>
+                <p className="font-label-caps text-label-caps text-secondary/70 uppercase tracking-wider mt-sm">Mins</p>
+              </div>
+              <div className="rounded-lg bg-secondary-fixed/20 border border-secondary/40 p-md text-center hover:border-secondary/60 transition-colors">
+                <p className="font-display-lg text-display-lg text-secondary">{countdown.seconds}</p>
+                <p className="font-label-caps text-label-caps text-secondary/70 uppercase tracking-wider mt-sm">Secs</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Itinerary List */}
+        <section className="px-margin-mobile mb-xl">
+          <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-lg px-sm">Your Itinerary</p>
+          <div className="space-y-lg relative">
+            {/* Timeline Vertical Line */}
+            <div className="absolute left-5 top-2 bottom-2 w-[2px] bg-secondary-fixed-dim"></div>
+
+            {itineraryData.map((day, index) => (
+              <div
+                key={index}
+                className="relative flex gap-lg items-start pl-10 group"
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-2.5 top-2 w-3 h-3 rounded-full bg-secondary ring-4 ring-white z-10 group-hover:scale-125 transition-transform"></div>
+
+                {/* Card Content */}
+                <button
+                  onClick={() => navigate(`/day/${index}`)}
+                  className="w-full bg-surface-container-lowest p-md rounded-xl shadow-soft hover:shadow-lg transition-all border-l-4 border-secondary flex flex-col text-left active:scale-95"
+                >
+                  <div className="flex justify-between items-start gap-md flex-1">
+                    <div className="flex-1 flex flex-col">
+                      <p className="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-xs">{day.day}, {day.date}</p>
+                      <h3 className="font-headline-md text-headline-md text-primary mb-sm">{day.city}</h3>
+                      <p className="font-body-md text-body-md text-on-surface-variant line-clamp-2 flex-1">{day.activities}</p>
+                      {day.notes && (
+                        <div className="mt-sm inline-flex items-center gap-xs bg-secondary-container/30 px-sm py-xs rounded-full">
+                          <span className="material-symbols-outlined text-sm text-on-secondary-container">info</span>
+                          <span className="font-label-caps text-label-caps text-on-secondary-container">{day.notes}</span>
+                        </div>
+                      )}
+                    </div>
+                    <span className="material-symbols-outlined text-secondary/60 flex-shrink-0">chevron_right</span>
                   </div>
-                  <div className="text-xl font-display font-bold text-white mb-2">{day.city}</div>
-                  <p className="text-sm text-blue-100 line-clamp-2">{day.activities}</p>
-                  {day.notes && (
-                    <p className="text-xs text-yellow-300 mt-2">📝 {day.notes}</p>
-                  )}
-                </div>
-                <div className="text-xl ml-4">→</div>
+                </button>
               </div>
-            </button>
-          ))}
-        </div>
-      </div>
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

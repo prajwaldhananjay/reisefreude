@@ -10,12 +10,12 @@ export default function DayDetail() {
 
   if (!day) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-navy via-blue-900 to-navy text-white flex items-center justify-center">
+      <div className="bg-background text-on-surface min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-xl mb-4">Day not found</p>
+          <p className="font-headline-md text-headline-md mb-lg text-secondary">Day not found</p>
           <button
             onClick={() => navigate('/')}
-            className="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors"
+            className="px-lg py-md bg-secondary text-on-secondary hover:bg-secondary/80 rounded-lg transition-colors font-label-caps text-label-caps"
           >
             Back to Itinerary
           </button>
@@ -25,62 +25,82 @@ export default function DayDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy via-blue-900 to-navy text-white font-sans">
-      {/* Header */}
-      <div className="sticky top-0 z-10 bg-navy/80 backdrop-blur-md border-b border-white/10 px-4 py-4 flex items-center justify-between">
+    <div className="bg-background text-on-surface min-h-screen">
+      {/* TopAppBar */}
+      <header className="sticky top-0 z-50 w-full bg-surface-bright shadow-soft flex items-center justify-between px-gutter py-md">
         <button
           onClick={() => navigate('/')}
-          className="text-blue-300 hover:text-white transition-colors text-xl font-semibold"
+          className="flex items-center gap-sm text-secondary hover:text-secondary/80 transition-colors"
         >
-          ← Back
+          <span className="material-symbols-outlined">arrow_back</span>
+          <span className="hidden sm:inline font-label-caps text-label-caps font-semibold">Back</span>
         </button>
-        <h1 className="text-2xl font-display font-bold text-center flex-1">
-          {day.date}
-        </h1>
-        <div className="w-8"></div>
-      </div>
+        <h1 className="font-headline-md text-headline-md text-center flex-1 text-primary">{day.date}</h1>
+        <div className="w-10"></div>
+      </header>
 
-      {/* Main Content */}
-      <div className="px-4 py-6 pb-24 max-w-2xl mx-auto">
-        {/* Date and Weekday */}
-        <div className="rounded-xl backdrop-blur-lg bg-white/10 border border-white/20 p-6 mb-6">
-          <p className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-2">Day of the Week</p>
-          <h2 className="text-4xl font-display font-bold text-white mb-4">{day.day}</h2>
-          <div className="bg-white/10 rounded-lg p-4">
-            <p className="text-lg text-white/90">{day.date}</p>
-          </div>
+      {/* Hero Section with Background Image */}
+      <section className="relative h-64 bg-gradient-to-br from-primary via-slate-900 to-primary flex items-end overflow-hidden" style={{
+        backgroundImage: "linear-gradient(135deg, rgba(0, 13, 34, 0.6) 0%, rgba(0, 13, 34, 0.8) 100%), url('https://images.unsplash.com/photo-1578500494198-246f612d03b3?q=80&w=2000&auto=format&fit=crop')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
+        <div className="w-full px-gutter py-lg relative z-10">
+          <h2 className="font-display-lg text-display-lg text-white mb-sm">{day.city}</h2>
+          <p className="font-body-md text-body-md text-white/90">{day.day}, {day.date}</p>
+        </div>
+      </section>
+
+      <main className="max-w-2xl mx-auto">
+        {/* Date and Weekday Card */}
+        <div className="mx-margin-mobile mt-xl mb-lg rounded-xl bg-surface-container-low border-l-4 border-secondary p-lg shadow-soft">
+          <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-sm">Day of the Week</p>
+          <h2 className="font-display-lg text-display-lg text-primary mb-md">{day.day}</h2>
+          <p className="font-body-md text-body-md text-on-surface-variant">{day.date}</p>
         </div>
 
-        {/* City and Location */}
-        <div className="rounded-xl backdrop-blur-lg bg-white/10 border border-white/20 p-6 mb-6">
-          <p className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-3">📍 Stay in / Visit</p>
-          <h3 className="text-3xl font-display font-bold text-white mb-4">{day.city}</h3>
+        {/* City and Location Card */}
+        <div className="mx-margin-mobile mb-lg rounded-xl bg-secondary-fixed/15 border-l-4 border-secondary p-lg shadow-soft hover:shadow-lg transition-all">
+          <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-md flex items-center gap-sm">
+            <span className="material-symbols-outlined text-base">location_on</span>
+            Location
+          </p>
+          <h3 className="font-headline-md text-headline-md text-primary">{day.city}</h3>
         </div>
 
-        {/* Activities */}
-        <div className="rounded-xl backdrop-blur-lg bg-white/10 border border-white/20 p-6 mb-6">
-          <p className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-3">🎯 Activities</p>
-          <p className="text-lg text-white/90 leading-relaxed">{day.activities}</p>
+        {/* Activities Card */}
+        <div className="mx-margin-mobile mb-lg rounded-xl bg-secondary-fixed/15 border-l-4 border-secondary p-lg shadow-soft hover:shadow-lg transition-all">
+          <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-md flex items-center gap-sm">
+            <span className="material-symbols-outlined text-base">star</span>
+            Activities
+          </p>
+          <p className="font-body-md text-body-md text-on-surface leading-relaxed">{day.activities}</p>
         </div>
 
-        {/* Notes / Reminders */}
+        {/* Notes / Reminders Card */}
         {day.notes && (
-          <div className="rounded-xl backdrop-blur-lg bg-yellow-500/10 border border-yellow-400/30 p-6 mb-6">
-            <p className="text-sm font-semibold text-yellow-300 uppercase tracking-wider mb-3">📝 Important Notes</p>
-            <p className="text-white/90 leading-relaxed">{day.notes}</p>
+          <div className="mx-margin-mobile mb-lg rounded-xl bg-error-container/20 border-l-4 border-error p-lg shadow-soft">
+            <p className="font-label-caps text-label-caps text-error uppercase tracking-widest mb-md flex items-center gap-sm">
+              <span className="material-symbols-outlined text-base">info</span>
+              Important Notes
+            </p>
+            <p className="font-body-md text-body-md text-on-surface leading-relaxed">{day.notes}</p>
           </div>
         )}
 
-        {/* Navigation */}
-        <div className="grid grid-cols-2 gap-4 mt-8">
+        {/* Navigation Cards */}
+        <div className="mx-margin-mobile grid grid-cols-2 gap-md mt-xl">
           {prevDay ? (
             <button
               onClick={() => navigate(`/day/${parseInt(dayIndex) - 1}`)}
-              className="rounded-xl backdrop-blur-lg bg-white/10 hover:bg-white/15 border border-white/20 p-4 transition-all duration-300"
+              className="rounded-lg bg-surface-container-low border-l-4 border-secondary p-md shadow-soft hover:shadow-lg transition-all active:scale-95 text-left"
             >
-              <p className="text-xs text-blue-200 mb-2">← Previous</p>
-              <p className="font-display font-bold text-white">{prevDay.date}</p>
-              <p className="text-sm text-blue-100 mt-1">{prevDay.city}</p>
+              <p className="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-sm flex items-center gap-xs">
+                <span className="material-symbols-outlined text-sm">arrow_back</span>
+                Previous
+              </p>
+              <p className="font-headline-md text-headline-md text-primary text-lg">{prevDay.date}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant mt-sm">{prevDay.city}</p>
             </button>
           ) : (
             <div></div>
@@ -88,17 +108,20 @@ export default function DayDetail() {
           {nextDay ? (
             <button
               onClick={() => navigate(`/day/${parseInt(dayIndex) + 1}`)}
-              className="rounded-xl backdrop-blur-lg bg-white/10 hover:bg-white/15 border border-white/20 p-4 transition-all duration-300"
+              className="rounded-lg bg-surface-container-low border-l-4 border-secondary p-md shadow-soft hover:shadow-lg transition-all active:scale-95 text-left"
             >
-              <p className="text-xs text-blue-200 mb-2">Next →</p>
-              <p className="font-display font-bold text-white">{nextDay.date}</p>
-              <p className="text-sm text-blue-100 mt-1">{nextDay.city}</p>
+              <p className="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-sm flex items-center gap-xs">
+                <span>Next</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </p>
+              <p className="font-headline-md text-headline-md text-primary text-lg">{nextDay.date}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant mt-sm">{nextDay.city}</p>
             </button>
           ) : (
             <div></div>
           )}
         </div>
-      </div>
+      </main>
     </div>
   );
 }
