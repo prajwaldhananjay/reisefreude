@@ -3,12 +3,29 @@ import { itineraryData } from '../data/itinerary';
 
 const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-const CITY_STYLES = {
-  'Munich':           { dot: 'bg-secondary',          tint: 'bg-secondary-fixed/40',        border: 'border-secondary' },
-  'Leverkusen':       { dot: 'bg-on-tertiary-container', tint: 'bg-tertiary-fixed/50',      border: 'border-on-tertiary-container' },
-  'Vienna/Budapest':  { dot: 'bg-on-primary-container', tint: 'bg-primary-fixed/50',        border: 'border-on-primary-container' },
-  '-':                { dot: 'bg-outline',            tint: 'bg-surface-container',         border: 'border-outline' },
-};
+const COLOR_PALETTE = [
+  { dot: 'bg-secondary',               tint: 'bg-secondary-fixed/40',       border: 'border-secondary' },
+  { dot: 'bg-on-tertiary-container',   tint: 'bg-tertiary-fixed/50',        border: 'border-on-tertiary-container' },
+  { dot: 'bg-on-primary-container',    tint: 'bg-primary-fixed/50',         border: 'border-on-primary-container' },
+  { dot: 'bg-error',                   tint: 'bg-error-container/30',       border: 'border-error' },
+  { dot: 'bg-amber-500',               tint: 'bg-amber-100/60',             border: 'border-amber-500' },
+  { dot: 'bg-teal-500',                tint: 'bg-teal-100/60',              border: 'border-teal-500' },
+  { dot: 'bg-violet-500',              tint: 'bg-violet-100/60',            border: 'border-violet-500' },
+  { dot: 'bg-rose-500',                tint: 'bg-rose-100/60',              border: 'border-rose-500' },
+];
+
+const FALLBACK_STYLE = { dot: 'bg-outline', tint: 'bg-surface-container', border: 'border-outline' };
+
+function buildCityStyles(data) {
+  const cities = [...new Set(data.map(e => e.city).filter(c => c && c !== '-'))];
+  const styles = { '-': FALLBACK_STYLE };
+  cities.forEach((city, i) => {
+    styles[city] = COLOR_PALETTE[i % COLOR_PALETTE.length];
+  });
+  return { styles, cities };
+}
+
+const { styles: CITY_STYLES, cities: TRIP_CITIES } = buildCityStyles(itineraryData);
 
 const TRIP_YEAR = 2026;
 
@@ -78,9 +95,9 @@ export default function CalendarView() {
       {/* Legend */}
       <div className="flex flex-wrap items-center gap-md px-sm">
         <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mr-sm">Cities</p>
-        {Object.entries(CITY_STYLES).filter(([city]) => city !== '-').map(([city, style]) => (
+        {TRIP_CITIES.map(city => (
           <div key={city} className="flex items-center gap-xs">
-            <span className={`w-3 h-3 rounded-full ${style.dot}`}></span>
+            <span className={`w-3 h-3 rounded-full ${CITY_STYLES[city].dot}`}></span>
             <span className="font-label-caps text-label-caps text-on-surface-variant">{city}</span>
           </div>
         ))}

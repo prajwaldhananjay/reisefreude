@@ -3,46 +3,46 @@ export const itineraryData = [
     date: "8th July",
     day: "Wednesday",
     city: "Munich",
-    stay: "Dein Apart, Munich",
-    activities: "Rest till evening, grocery shopping (before 8pm) and short walk in the sun (sunset at 9:14pm!)",
+    stay: "Dein Apart, Munich (2 people)",
+    activities: "Get good sleep",
     notes: "Deutschland train ticket"
   },
   {
     date: "9th July",
     day: "Thursday",
-    city: "Munich",
-    stay: "",
-    activities: "Birthday party from Appa and visit Munich Old Town, Isar River",
-    notes: ""
+    city: "Rosenheim",
+    stay: "Duplex apartment (4 people)",
+    activities: "Birthday party from Appa and settle in Rosenheim apartment",
+    notes: "Buy groceries and cook "
   },
   {
     date: "10th July",
     day: "Friday",
-    city: "Munich",
-    stay: "",
-    activities: "Garmisch-Zugspitze-Eibsee",
-    notes: "Carry water and snacks"
+    city: "Rosenheim",
+    stay: "Duplex apartment (4 people)",
+    activities: "Visit Salzburg",
+    notes: "Carry water and food"
   },
   {
     date: "11th July",
     day: "Saturday",
-    city: "Munich",
-    stay: "",
-    activities: "Salzburg, Austria",
-    notes: ""
+    city: "Rosenheim",
+    stay: "Duplex apartment (4 people)",
+    activities: "Visit Hallstatt or Berchtesgaden, Konigsee",
+    notes: "Carry water and food"
   },
   {
     date: "12th July",
     day: "Sunday",
-    city: "Munich",
-    stay: "",
-    activities: "Rest, Pinakothek der Moderne Museum",
-    notes: ""
+    city: "Rosenheim",
+    stay: "Duplex apartment (4 people)",
+    activities: "Visit Innsbruck",
+    notes: "Carry water and food"
   },
   {
     date: "13th July",
     day: "Monday",
-    city: "Munich",
+    city: "Rosenheim",
     stay: "",
     activities: "Nymphenburg Palace, OlympiaPark, BMW Welt",
     notes: ""
@@ -50,41 +50,41 @@ export const itineraryData = [
   {
     date: "14th July",
     day: "Tuesday",
-    city: "Munich",
+    city: "Rosenheim",
     stay: "",
-    activities: "Dachau Concentration camp",
+    activities: "Garmisch-Zugspitze-Eibsee",
     notes: ""
   },
   {
     date: "15th July",
     day: "Wednesday",
-    city: "Munich",
+    city: "Rosenheim",
     stay: "",
-    activities: "Tegernsee or Starnberger see",
+    activities: "Dachau Concentration camp",
     notes: ""
   },
   {
     date: "16th July",
     day: "Thursday",
-    city: "Munich",
+    city: "Rosenheim",
     stay: "",
-    activities: "Rest day or Andechs Monastery",
+    activities: "Rest day or Rothenburg ob der Tauber",
     notes: ""
   },
   {
     date: "17th July",
     day: "Friday",
-    city: "Munich",
+    city: "Vienna",
     stay: "",
-    activities: "Rothenburg ob der Tauber",
+    activities: "Explore Vienna, visit Schönbrunn Palace, St. Stephen's Cathedral, and enjoy the city vibes",
     notes: ""
   },
   {
     date: "18th July",
     day: "Saturday",
-    city: "Munich",
+    city: "Vienna",
     stay: "",
-    activities: "Berchtesgaden, Konigsee",
+    activities: "Explore Vienna, visit Belvedere Palace, Hofburg Palace, and enjoy the city vibes",
     notes: ""
   },
   {
@@ -100,7 +100,7 @@ export const itineraryData = [
     day: "Monday",
     city: "Munich",
     stay: "",
-    activities: "Innsbruck, Austria",
+    activities: "",
     notes: ""
   },
   {
@@ -172,32 +172,32 @@ export const itineraryData = [
     day: "Wednesday",
     city: "Leverkusen",
     stay: "",
-    activities: "Return to Munich and rest",
-    notes: "Book Cologne-Munich train"
+    activities: "To be decided",
+    notes: ""
   },
   {
     date: "30th July",
     day: "Thursday",
-    city: "Munich",
+    city: "Paris",
     stay: "",
-    activities: "Visit Nuremburg?",
-    notes: ""
+    activities: "Explore Paris, visit Eiffel Tower, Louvre Museum, and enjoy the city vibes",
+    notes: "Book Leverkusen-Paris train/bus and accommodation in Paris"
   },
   {
     date: "31st July",
     day: "Friday",
-    city: "Vienna/Budapest",
+    city: "Paris",
     stay: "",
-    activities: "Explore Vienna or Budapest",
-    notes: "Book train & stay"
+    activities: "",
+    notes: ""
   },
   {
     date: "1st August",
     day: "Saturday",
-    city: "Vienna/Budapest",
+    city: "Lucerne",
     stay: "",
-    activities: "Last Saturday in Europe",
-    notes: "Remember to buy bus/tram/train tickets if traveling"
+    activities: "",
+    notes: "Book Paris-Lucerne train and accommodation in Lucerne"
   },
   {
     date: "2nd August",
@@ -210,10 +210,10 @@ export const itineraryData = [
   {
     date: "3rd August",
     day: "Monday",
-    city: "-",
+    city: "Munich",
     stay: "",
     activities: "Return flight",
-    notes: ""
+    notes: "Wishing a safe and pleasant journey back home!"
   }
 ];
 
