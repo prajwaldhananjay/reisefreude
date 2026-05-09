@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { itineraryData } from '../data/itinerary';
+import { useWeather } from '../hooks/useWeather';
 
 export default function DayDetail() {
   const { dayIndex } = useParams();
@@ -7,6 +8,7 @@ export default function DayDetail() {
   const day = itineraryData[parseInt(dayIndex)];
   const prevDay = parseInt(dayIndex) > 0 ? itineraryData[parseInt(dayIndex) - 1] : null;
   const nextDay = parseInt(dayIndex) < itineraryData.length - 1 ? itineraryData[parseInt(dayIndex) + 1] : null;
+  const { weather, loading: weatherLoading } = useWeather(day?.city, day?.date);
 
   if (!day) {
     return (
@@ -54,18 +56,34 @@ export default function DayDetail() {
       <main className="max-w-2xl mx-auto">
         {/* Date and Weekday Card */}
         <div className="mx-margin-mobile mt-xl mb-lg rounded-xl bg-surface-container-low border-l-4 border-secondary p-lg shadow-soft">
-          <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-sm">Day of the Week</p>
+          <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-sm">Weekday</p>
           <h2 className="font-display-lg text-display-lg text-primary mb-md">{day.day}</h2>
-          <p className="font-body-md text-body-md text-on-surface-variant">{day.date}</p>
+          <div className="flex items-center justify-between">
+            <p className="font-body-md text-body-md text-on-surface-variant">{day.date}</p>
+            {weatherLoading && (
+              <p className="font-body-md text-body-md text-on-surface-variant/60">...</p>
+            )}
+            {!weatherLoading && weather && (
+              <div className="flex items-center gap-xs text-on-surface-variant">
+                <span className="material-symbols-outlined text-sm">thermometer</span>
+                <span className="font-body-md text-body-md">
+                  {weather.max}° / {weather.min}°C
+                </span>
+                {weather.historical && (
+                  <span className="font-label-caps text-label-caps text-on-surface-variant/50 text-xs">avg</span>
+                )}
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* City and Location Card */}
+        {/* Location Card */}
         <div className="mx-margin-mobile mb-lg rounded-xl bg-secondary-fixed/15 border-l-4 border-secondary p-lg shadow-soft hover:shadow-lg transition-all">
           <p className="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-md flex items-center gap-sm">
             <span className="material-symbols-outlined text-base">location_on</span>
             Location
           </p>
-          <h3 className="font-headline-md text-headline-md text-primary">{day.city}</h3>
+          <h3 className="font-headline-md text-headline-md text-primary">{day.stay || day.city}</h3>
         </div>
 
         {/* Activities Card */}

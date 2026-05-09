@@ -3,6 +3,7 @@ export const itineraryData = [
     date: "8th July",
     day: "Wednesday",
     city: "Munich",
+    stay: "Dein Apart, Munich",
     activities: "Rest till evening, grocery shopping (before 8pm) and short walk in the sun (sunset at 9:14pm!)",
     notes: "Deutschland train ticket"
   },
@@ -10,6 +11,7 @@ export const itineraryData = [
     date: "9th July",
     day: "Thursday",
     city: "Munich",
+    stay: "",
     activities: "Birthday party from Appa and visit Munich Old Town, Isar River",
     notes: ""
   },
@@ -17,6 +19,7 @@ export const itineraryData = [
     date: "10th July",
     day: "Friday",
     city: "Munich",
+    stay: "",
     activities: "Garmisch-Zugspitze-Eibsee",
     notes: "Carry water and snacks"
   },
@@ -24,6 +27,7 @@ export const itineraryData = [
     date: "11th July",
     day: "Saturday",
     city: "Munich",
+    stay: "",
     activities: "Salzburg, Austria",
     notes: ""
   },
@@ -31,6 +35,7 @@ export const itineraryData = [
     date: "12th July",
     day: "Sunday",
     city: "Munich",
+    stay: "",
     activities: "Rest, Pinakothek der Moderne Museum",
     notes: ""
   },
@@ -38,6 +43,7 @@ export const itineraryData = [
     date: "13th July",
     day: "Monday",
     city: "Munich",
+    stay: "",
     activities: "Nymphenburg Palace, OlympiaPark, BMW Welt",
     notes: ""
   },
@@ -45,6 +51,7 @@ export const itineraryData = [
     date: "14th July",
     day: "Tuesday",
     city: "Munich",
+    stay: "",
     activities: "Dachau Concentration camp",
     notes: ""
   },
@@ -52,6 +59,7 @@ export const itineraryData = [
     date: "15th July",
     day: "Wednesday",
     city: "Munich",
+    stay: "",
     activities: "Tegernsee or Starnberger see",
     notes: ""
   },
@@ -59,6 +67,7 @@ export const itineraryData = [
     date: "16th July",
     day: "Thursday",
     city: "Munich",
+    stay: "",
     activities: "Rest day or Andechs Monastery",
     notes: ""
   },
@@ -66,6 +75,7 @@ export const itineraryData = [
     date: "17th July",
     day: "Friday",
     city: "Munich",
+    stay: "",
     activities: "Rothenburg ob der Tauber",
     notes: ""
   },
@@ -73,6 +83,7 @@ export const itineraryData = [
     date: "18th July",
     day: "Saturday",
     city: "Munich",
+    stay: "",
     activities: "Berchtesgaden, Konigsee",
     notes: ""
   },
@@ -80,6 +91,7 @@ export const itineraryData = [
     date: "19th July",
     day: "Sunday",
     city: "Munich",
+    stay: "",
     activities: "English Garden, Deutsches Museum",
     notes: ""
   },
@@ -87,6 +99,7 @@ export const itineraryData = [
     date: "20th July",
     day: "Monday",
     city: "Munich",
+    stay: "",
     activities: "Innsbruck, Austria",
     notes: ""
   },
@@ -94,6 +107,7 @@ export const itineraryData = [
     date: "21st July",
     day: "Tuesday",
     city: "Munich",
+    stay: "",
     activities: "",
     notes: ""
   },
@@ -101,6 +115,7 @@ export const itineraryData = [
     date: "22nd July",
     day: "Wednesday",
     city: "Munich",
+    stay: "",
     activities: "",
     notes: ""
   },
@@ -108,6 +123,7 @@ export const itineraryData = [
     date: "23rd July",
     day: "Thursday",
     city: "Leverkusen",
+    stay: "",
     activities: "Arrive in Leverkusen",
     notes: "Book Munich-Cologne train"
   },
@@ -115,6 +131,7 @@ export const itineraryData = [
     date: "24th July",
     day: "Friday",
     city: "Leverkusen",
+    stay: "",
     activities: "Visit Cologne Cathedral and Old Town",
     notes: ""
   },
@@ -122,6 +139,7 @@ export const itineraryData = [
     date: "25th July",
     day: "Saturday",
     city: "Leverkusen",
+    stay: "",
     activities: "To be decided",
     notes: ""
   },
@@ -129,6 +147,7 @@ export const itineraryData = [
     date: "26th July",
     day: "Sunday",
     city: "Leverkusen",
+    stay: "",
     activities: "To be decided",
     notes: ""
   },
@@ -136,6 +155,7 @@ export const itineraryData = [
     date: "27th July",
     day: "Monday",
     city: "Leverkusen",
+    stay: "",
     activities: "To be decided",
     notes: ""
   },
@@ -143,6 +163,7 @@ export const itineraryData = [
     date: "28th July",
     day: "Tuesday",
     city: "Leverkusen",
+    stay: "",
     activities: "To be decided",
     notes: ""
   },
@@ -150,6 +171,7 @@ export const itineraryData = [
     date: "29th July",
     day: "Wednesday",
     city: "Leverkusen",
+    stay: "",
     activities: "Return to Munich and rest",
     notes: "Book Cologne-Munich train"
   },
@@ -157,6 +179,7 @@ export const itineraryData = [
     date: "30th July",
     day: "Thursday",
     city: "Munich",
+    stay: "",
     activities: "Visit Nuremburg?",
     notes: ""
   },
@@ -164,6 +187,7 @@ export const itineraryData = [
     date: "31st July",
     day: "Friday",
     city: "Vienna/Budapest",
+    stay: "",
     activities: "Explore Vienna or Budapest",
     notes: "Book train & stay"
   },
@@ -171,6 +195,7 @@ export const itineraryData = [
     date: "1st August",
     day: "Saturday",
     city: "Vienna/Budapest",
+    stay: "",
     activities: "Last Saturday in Europe",
     notes: "Remember to buy bus/tram/train tickets if traveling"
   },
@@ -178,6 +203,7 @@ export const itineraryData = [
     date: "2nd August",
     day: "Sunday",
     city: "Munich",
+    stay: "",
     activities: "Return to Munich, pack and prepare for return flight",
     notes: ""
   },
@@ -185,6 +211,7 @@ export const itineraryData = [
     date: "3rd August",
     day: "Monday",
     city: "-",
+    stay: "",
     activities: "Return flight",
     notes: ""
   }
